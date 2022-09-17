@@ -11,7 +11,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   return (
     <div>
       <Layout>
-        <p>{translation("text")}</p>
+        <p>{translation("text")}Test za push</p>
       </Layout>
     </div>
   );
