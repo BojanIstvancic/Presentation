@@ -1,4 +1,5 @@
 import React from "react";
+import Layout from "../components/Layout";
 
 const messages = {
   sr: {
@@ -12,7 +13,13 @@ const messages = {
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
-  return <div>test</div>;
+  return (
+    <div>
+      <Layout>
+        <p>Test text</p>
+      </Layout>
+    </div>
+  );
 };
 
 export default HomePage;
