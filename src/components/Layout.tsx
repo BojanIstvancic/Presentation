@@ -26,7 +26,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:type" content="website" />
-        <meta property="og:locale" content="en_GB" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

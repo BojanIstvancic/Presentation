@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import Head from "next/head";
 import { NextIntlProvider } from "next-intl";
+import "../../node_modules/minireset.css/minireset.min";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -29,6 +30,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
+        />
         <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>
       <NextIntlProvider messages={pageProps.messages}>
