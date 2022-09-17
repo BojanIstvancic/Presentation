@@ -2,7 +2,6 @@ import { GetStaticPropsContext } from "next";
 import React from "react";
 import Layout from "../components/Layout";
 import { useTranslations } from "use-intl";
-import "../../node_modules/minireset/";
 
 interface HomePageProps {}
 

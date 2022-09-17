@@ -3,7 +3,6 @@ import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import Head from "next/head";
 import { NextIntlProvider } from "next-intl";
-import "../../node_modules/minireset.css/minireset.min";
 
 const GlobalStyle = createGlobalStyle`
 :root {
