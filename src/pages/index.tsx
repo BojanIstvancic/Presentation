@@ -1,13 +1,18 @@
-import type { NextPage } from 'next'
-import createGlobal from 'styled-components'
+import React from "react";
 
+const messages = {
+  sr: {
+    message: "message",
+  },
+  en: {
+    message: "message",
+  },
+};
 
-const Home: NextPage = () => {
-  return (
-    <div>
-        test
-    </div>
-  )
-}
+interface HomePageProps {}
 
-export default Home
+const HomePage: React.FC<HomePageProps> = ({}) => {
+  return <div>test</div>;
+};
+
+export default HomePage;

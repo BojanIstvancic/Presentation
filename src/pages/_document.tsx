@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        {/* <link
+        <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/apple-touch-icon.png"
@@ -36,8 +36,8 @@ export default function Document() {
           type="/safari-pinned-tab.svg"
           color="red"
           // IOS
-        /> */}
-        <meta name="ms-application-TileColor" content="red" />
+        />
+        <meta name="ms-application-TileColor" content="#67BDFF" />
         <meta name="theme-color" content="#fff" />
       </Head>
       <body>

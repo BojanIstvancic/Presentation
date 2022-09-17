@@ -7,10 +7,19 @@ const GlobalStyle = createGlobalStyle`
 :root {
   --white: #fff;
   --black: #000;
+  --dark-gray: #424242;
+  --gray: #C4C4C4;
+  --blue: #67BDFF;
+}
+
+::selection {
+    background: var(--blue);
+    color: var(--white);
 }
 
 html {
   font-family: "Sora";
+  color: var(--dark-gray);
 }
 `;
 
@@ -19,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Head>
-        <title key="title">Bojan Portfolio</title>
+        <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>
       <Component {...pageProps} />
     </>
