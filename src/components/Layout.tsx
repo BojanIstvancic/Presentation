@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
-// import { useIntl } from "react-intl";
+import { useTranslations } from "use-intl";
 
 const StyledLayout = styled.div`
   min-height: 100vh;
@@ -11,16 +11,14 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  // const { formatMessage: f } = useIntl();
+  const translation = useTranslations("meta");
   return (
     <>
       <Head>
         <meta property="og:title" content="Portfolio | Bojan Istvancic" />
-        {/* <meta name="description" content={f({ id: "meta.description" })} /> */}
-        <meta
-          property="og:description"
-          content={f({ id: "meta.description" })}
-        />
+        <meta name="description" content={translation("description")} />
+        <meta property="og:description" content={translation("description")} />
+
         <meta
           property="og:image"
           content="https://ahrefs.com/blog/wp-content/uploads/2020/01/fb-open-graph-1.jpg"

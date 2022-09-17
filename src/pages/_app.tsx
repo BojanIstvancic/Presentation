@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import Head from "next/head";
+import { NextIntlProvider } from "next-intl";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -30,7 +31,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>
-      <Component {...pageProps} />
+      <NextIntlProvider messages={pageProps.messages}>
+        <Component {...pageProps} />
+      </NextIntlProvider>
     </>
   );
 }
