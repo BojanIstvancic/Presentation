@@ -37,10 +37,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
-        />
         <link key={`locale-link-alternate${locale}`} hrefLang={locale} />
         <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>

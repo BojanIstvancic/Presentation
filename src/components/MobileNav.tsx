@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import styled, { css } from "styled-components";
 
 const StyledNav = styled.div<{ displayMobileNav: boolean }>`
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;

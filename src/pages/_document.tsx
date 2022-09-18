@@ -43,8 +43,13 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
+        />
         <meta name="ms-application-TileColor" content="#67BDFF" />
         <meta name="theme-color" content="#fff" />
+        <meta name="charset" content="UTF-8" />
       </Head>
       <body>
         <Main />
