@@ -43,6 +43,7 @@ const NavCloseButton = styled.div`
   text-align: right;
   font-size: 30px;
   color: var(--white);
+  cursor: pointer;
 `;
 
 interface MobileNavProps {

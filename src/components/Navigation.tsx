@@ -57,8 +57,7 @@ const NavigationLink = styled.a`
     transition: all 400ms ease;
   }
 
-  &:hover:after,
-  &:focus:after {
+  &:hover:after {
     width: 100%;
   }
 `;
