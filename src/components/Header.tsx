@@ -24,6 +24,7 @@ const Container = styled.div`
   @media (min-width: 1200px) {
     width: 1136px;
     flex-direction: column;
+    padding: 16px;
   }
 `;
 const Logo = styled.img`

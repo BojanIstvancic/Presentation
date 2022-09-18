@@ -10,7 +10,7 @@ const StyledNavigation = styled.div`
   display: none;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 16px;
 
   @media (min-width: 1200px) {
     display: flex;
@@ -58,7 +58,7 @@ const NavigationLink = styled.a`
   }
 
   &:hover:after,
-  &:hover:focus {
+  &:focus:after {
     width: 100%;
   }
 `;
