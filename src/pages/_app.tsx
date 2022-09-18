@@ -2,7 +2,9 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import Head from "next/head";
-import { NextIntlProvider } from "next-intl";
+import { NextIntlProvider, useTranslations } from "next-intl";
+import { Html } from "next/document";
+import { useRouter } from "next/router";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -28,6 +30,9 @@ html {
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const locale = router.locale;
+
   return (
     <>
       <GlobalStyle />
@@ -36,6 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css"
         />
+        <link key={`locale-link-alternate${locale}`} hrefLang={locale} />
         <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>
       <NextIntlProvider messages={pageProps.messages}>

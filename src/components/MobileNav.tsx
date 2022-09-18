@@ -12,13 +12,15 @@ const StyledNav = styled.div<{ displayMobileNav: boolean }>`
   background: var(--blue);
   transition: all 500ms ease;
   pointer-events: none;
+  opacity: 0;
 
   ${({ displayMobileNav }) =>
     displayMobileNav &&
     css`
       height: 100%;
+      opacity: 1;
       z-index: 999;
-      pointer-events: default;
+      pointer-events: auto;
     `};
 `;
 const NavContent = styled.div`
@@ -93,12 +95,12 @@ const MobileNav: React.FC<MobileNavProps> = ({
           </NavLink>
         </Link>
         {locale === "sr" && (
-          <Link href="#" locale="en">
+          <Link href="" locale="en">
             <NavLink>en</NavLink>
           </Link>
         )}
         {locale === "en" && (
-          <Link href="#" locale="sr">
+          <Link href="" locale="sr">
             <NavLink>sr</NavLink>
           </Link>
         )}
