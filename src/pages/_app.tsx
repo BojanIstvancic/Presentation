@@ -37,7 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <Head>
-        <link key={`locale-link-alternate${locale}`} hrefLang={locale} />
+        <link key={`locale-link-alternate-${locale}`} hrefLang={locale} />
         <title key="title">Portfolio | Bojan Istvancic</title>
       </Head>
       <NextIntlProvider messages={pageProps.messages}>

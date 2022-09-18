@@ -2,6 +2,9 @@ import { GetStaticPropsContext } from "next";
 import React from "react";
 import Layout from "../components/Layout";
 import { useTranslations } from "use-intl";
+import styled from "styled-components";
+
+const StyledMainContent = styled.main``;
 
 interface HomePageProps {}
 
@@ -9,11 +12,11 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   const translation = useTranslations("home");
 
   return (
-    <div>
-      <Layout>
+    <Layout>
+      <StyledMainContent>
         <p>{translation("text")}Test za push</p>
-      </Layout>
-    </div>
+      </StyledMainContent>
+    </Layout>
   );
 };
 
