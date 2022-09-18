@@ -40,9 +40,27 @@ const StyledNavigation = styled.div`
   }
 `;
 const NavigationLink = styled.a`
+  position: relative;
   margin: 0 20px;
   color: var(--white);
   cursor: pointer;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 3px);
+    width: 0;
+    height: 3px;
+    background-color: var(--yellow);
+    transition: all 400ms ease;
+  }
+
+  &:hover:after,
+  &:hover:focus {
+    width: 100%;
+  }
 `;
 
 const Navigation: React.FC<NavigationProps> = ({}) => {

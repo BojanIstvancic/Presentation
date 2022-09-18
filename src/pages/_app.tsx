@@ -8,9 +8,12 @@ const GlobalStyle = createGlobalStyle`
 :root {
   --white: #fff;
   --black: #000;
-  --dark-gray: #424242;
+
   --gray: #C4C4C4;
+  --dark-gray: #424242;
+
   --blue: #67BDFF;
+  --yellow: #ffe554;
 }
 
 ::selection {
