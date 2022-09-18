@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styled, { css } from "styled-components";
 
-const StyledNav = styled.div<{ displayNav: boolean }>`
+const StyledNav = styled.div<{ displayMobileNav: boolean }>`
   position: absolute;
   top: 0;
   left: 0;
@@ -11,13 +11,15 @@ const StyledNav = styled.div<{ displayNav: boolean }>`
   height: 0;
   background: var(--blue);
   transition: all 500ms ease;
+  pointer-events: none;
 
-  ${({ displayNav }) =>
-    displayNav &&
+  ${({ displayMobileNav }) =>
+    displayMobileNav &&
     css`
       height: 100%;
       z-index: 999;
-    `}
+      pointer-events: default;
+    `};
 `;
 const NavContent = styled.div`
   padding: 24px;
@@ -30,9 +32,10 @@ const NavLink = styled.a`
   position: relative;
   width: 100%;
   padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
   color: var(--white);
   cursor: pointer;
-  text-align: center;
 
   &:not(:last-child) {
     border-bottom: 1px solid var(--white);
@@ -59,7 +62,7 @@ const MobileNav: React.FC<MobileNavProps> = ({
   const router = useRouter();
   const locale = router.locale;
   return (
-    <StyledNav displayNav={displayMobileNav}>
+    <StyledNav displayMobileNav={displayMobileNav}>
       <NavContent>
         <NavCloseButton onClick={() => setDisplayMobileNav(false)}>
           X

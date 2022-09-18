@@ -11,5 +11,10 @@
   },
   "home": {
     "text": "text en"
+  },
+  "footer": {
+    "label-1": "Designed & Built by Bojan Ištvančić",
+    "label-2": "© All Rights Reserved",
+    "label-3": "Thanks to freepick for free assets"
   }
 }

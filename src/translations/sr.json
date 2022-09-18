@@ -1,6 +1,6 @@
 {
   "meta": {
-    "description": "Bojan istvancic je frontend developer iz Srbije. Ovaj portfolio pokazuje njegovo znanje i iskustvo u programiranju."
+    "description": "Bojan Ištvančić je frontend developer iz Srbije. Ovaj portfolio pokazuje njegovo znanje i iskustvo u programiranju."
   },
   "navigation": {
     "home": "home",
@@ -11,5 +11,10 @@
   },
   "home": {
     "text": "text sr"
+  },
+  "footer": {
+    "label-1": "Dizajnirao i izradio Bojan Ištvančić",
+    "label-2": "© Sva prava zadžana",
+    "label-3": "Hvala freepick vebsajtu za slike"
   }
 }
