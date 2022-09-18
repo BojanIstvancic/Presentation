@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html {
-  font-family: "Sora";
+  font-family: 'Sora', sans-serif;
   color: var(--dark-gray);
 }
 `;

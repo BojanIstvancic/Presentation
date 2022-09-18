@@ -2,6 +2,13 @@
   "meta": {
     "description": "Bojan Istvancic is frontend developer from Serbia.This portfolio shows his knowledge, experience and his development."
   },
+  "navigation": {
+    "home": "home",
+    "about-me": "about me",
+    "development": "development",
+    "projects": "projects",
+    "contact": "contact"
+  },
   "home": {
     "text": "text en"
   }
