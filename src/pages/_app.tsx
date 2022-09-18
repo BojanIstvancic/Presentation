@@ -2,8 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { createGlobalStyle } from "styled-components";
 import Head from "next/head";
-import { NextIntlProvider, useTranslations } from "next-intl";
-import { Html } from "next/document";
+import { NextIntlProvider } from "next-intl";
 import { useRouter } from "next/router";
 
 const GlobalStyle = createGlobalStyle`
@@ -15,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   --dark-gray: #424242;
 
   --blue: #67BDFF;
+  --dark-blue: #1c9cfd;
   --yellow: #ffe554;
 }
 
