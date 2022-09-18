@@ -10,7 +10,11 @@
     "contact": "kontakt"
   },
   "home": {
-    "home-download": "Preuzmi CV"
+    "home-download": "Preuzmi CV",
+    "home-title-label-1": "Zdravo,",
+    "home-title-label-2": "ja sam Bojan Ištvančić,",
+    "home-title-label-3": "i ja sam",
+    "home-title-label-4": "Frontend developer"
   },
   "footer": {
     "label-1": "Dizajnirao i izradio Bojan Ištvančić",

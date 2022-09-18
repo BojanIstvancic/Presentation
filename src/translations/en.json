@@ -10,10 +10,14 @@
     "contact": "contact"
   },
   "home": {
-    "home-download": "Download Resume"
+    "home-download": "Download Resume",
+    "home-title-label-1": "Hello,",
+    "home-title-label-2": "l'm Bojan Istvancic,",
+    "home-title-label-3": "and l'm",
+    "home-title-label-4": "Frontend developer"
   },
   "footer": {
-    "label-1": "Designed & Built by Bojan Ištvančić",
+    "label-1": "Designed & Built by Bojan Istvancic",
     "label-2": "© All Rights Reserved",
     "label-3": "Thanks to freepick for free assets"
   }
