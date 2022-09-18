@@ -11,7 +11,9 @@ import ReactTypingEffect from "react-typing-effect";
 const StyledMainContent = styled.main``;
 
 // ---- HOME ----
-const Home = styled.section``;
+const Home = styled.section`
+  scroll-margin-top: 70px;
+`;
 const HomeInner = styled.div`
   padding: 40px 0;
 
@@ -134,16 +136,15 @@ interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
   const translation = useTranslations("home");
-
   const position = translation("home-title-label-4");
 
   return (
     <Layout>
       <StyledMainContent>
-        <Home>
+        <Home id="home">
           <Container>
             <HomeInner>
-              <HomeTitleContainer id="home">
+              <HomeTitleContainer>
                 <HomeTitle>
                   <span>{translation("home-title-label-1")}</span>
                   <span className="i-am">
