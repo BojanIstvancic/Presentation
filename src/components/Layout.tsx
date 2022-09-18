@@ -3,6 +3,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { useTranslations } from "use-intl";
 import Header from "./Header";
+import MobileNav from "./MobileNav";
 
 const StyledLayout = styled.div`
   min-height: 100vh;
@@ -14,7 +15,7 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const translation = useTranslations("meta");
-  const [displayMobileNavOverlay, setDisplayMobileNavOverlay] = useState(false);
+  const [displayMobileNav, setDisplayMobileNav] = useState(false);
   return (
     <>
       <Head>
@@ -32,8 +33,15 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Header setDisplayMobileNavOverlay={setDisplayMobileNavOverlay} />
-      <StyledLayout>{children}</StyledLayout>
+
+      <StyledLayout>
+        <MobileNav
+          setDisplayMobileNav={setDisplayMobileNav}
+          displayMobileNav={displayMobileNav}
+        />
+        <Header setDisplayMobileNav={setDisplayMobileNav} />
+        {children}
+      </StyledLayout>
     </>
   );
 };

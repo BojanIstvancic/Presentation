@@ -30,21 +30,27 @@ const Logo = styled.img`
   height: 32px;
 `;
 const Hamburger = styled.img`
+  cursor: pointer;
+
   @media (min-width: 1200px) {
     display: none;
   }
 `;
 
 interface HeaderProps {
-  setDisplayMobileNavOverlay: () => void;
+  setDisplayMobileNav: (value: boolean) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ setDisplayMobileNavOverlay }) => {
+const Header: React.FC<HeaderProps> = ({ setDisplayMobileNav }) => {
   return (
     <StyledHeader>
       <Container>
         <Logo src="/images/logos/logo.svg" alt="logo" />
-        <Hamburger src="/images/icons/hamburger.svg" alt="hamburger" />
+        <Hamburger
+          src="/images/icons/hamburger.svg"
+          alt="hamburger"
+          onClick={() => setDisplayMobileNav(true)}
+        />
         <Navigation />
       </Container>
     </StyledHeader>
