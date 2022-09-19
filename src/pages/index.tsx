@@ -133,7 +133,9 @@ const HomeImageContainer = styled.div`
 `;
 
 // ---- AboutMe ----
-const AboutMe = styled.section``;
+const AboutMe = styled.section`
+  scroll-margin-top: 100px;
+`;
 const AboutMeInner = styled.div`
   padding-bottom: 40px;
 `;
@@ -178,20 +180,22 @@ const AboutMeText = styled.p`
   }
 `;
 
-// ---- Social ----
-const Social = styled.section``;
-const SocialInner = styled.div`
+// ---- Contact ----
+const Contact = styled.section``;
+const ContactInner = styled.div``;
+const ContactHeading = styled(AboutMeHeading)``;
+const Social = styled.div`
   padding-bottom: 40px;
 `;
-const SocialHeading = styled.h2`
-  font-size: 36px;
+const SocialHeading = styled.h3`
+  font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
   text-align: left;
   color: var(--blue);
 
   @media (min-width: 800px) {
-    font-size: 48px;
+    font-size: 38px;
   }
 `;
 const SocialContent = styled.div`
@@ -269,29 +273,40 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
             </AboutMeInner>
           </Container>
         </AboutMe>
-        <Social>
+        <Contact id="contact">
           <Container>
-            <SocialInner>
-              <SocialHeading>{translation("social-heading")}</SocialHeading>
-              <SocialContent>
-                <a
-                  href="https://www.linkedin.com/in/bojan-istvancic-195404127/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SocialIcon src="/images/icons/linkedIn.svg" alt="linkedIn" />
-                </a>
-                <a
-                  href="https://github.com/BojanIstvancic?tab=repositories"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <SocialIcon src="/images/icons/github.svg" alt="github" />
-                </a>
-              </SocialContent>
-            </SocialInner>
+            <ContactInner>
+              <ContactHeading>
+                {translation("contact-heading")}
+                <span>.</span>
+              </ContactHeading>
+              <Social>
+                <SocialHeading>
+                  {translation("contact-social-heading")}
+                </SocialHeading>
+                <SocialContent>
+                  <a
+                    href="https://www.linkedin.com/in/bojan-istvancic-195404127/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SocialIcon
+                      src="/images/icons/linkedIn.svg"
+                      alt="linkedIn"
+                    />
+                  </a>
+                  <a
+                    href="https://github.com/BojanIstvancic?tab=repositories"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <SocialIcon src="/images/icons/github.svg" alt="github" />
+                  </a>
+                </SocialContent>
+              </Social>
+            </ContactInner>
           </Container>
-        </Social>
+        </Contact>
       </StyledMainContent>
     </Layout>
   );

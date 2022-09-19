@@ -46,7 +46,9 @@ const Header: React.FC<HeaderProps> = ({ setDisplayMobileNav }) => {
   return (
     <StyledHeader>
       <Container>
-        <Logo src="/images/logos/logo.svg" alt="logo" />
+        <a href="#home">
+          <Logo src="/images/logos/logo.svg" alt="logo" />
+        </a>
         <Hamburger
           src="/images/icons/hamburger.svg"
           alt="hamburger"
