@@ -132,6 +132,54 @@ const HomeImageContainer = styled.div`
   }
 `;
 
+// ---- AboutMe ----
+const AboutMe = styled.section`
+  scroll-margin-top: 70px;
+`;
+const AboutMeInner = styled.div`
+  padding-bottom: 40px;
+`;
+const AboutMeHeading = styled.h2`
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+
+  span {
+    font-size: 1.2em;
+    color: var(--blue);
+  }
+
+  @media (min-width: 800px) {
+    font-size: 48px;
+  }
+`;
+const AboutMeContent = styled.div`
+  @media (min-width: 800px) {
+    display: flex;
+    align-items: center;
+  }
+`;
+const AboutMeImage = styled.img`
+  margin-bottom: 24px;
+  height: 200px;
+
+  @media (min-width: 800px) {
+    display: flex;
+    margin-bottom: 0;
+    margin-right: 80px;
+    height: 300px;
+  }
+`;
+const AboutMeText = styled.p`
+  font-size: 16px;
+  color: var(--black);
+
+  @media (min-width: 800px) {
+    font-size: 24px;
+  }
+`;
+
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = ({}) => {
@@ -182,6 +230,23 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
             </HomeInner>
           </Container>
         </Home>
+        <AboutMe id="about-me">
+          <Container>
+            <AboutMeInner>
+              <AboutMeHeading>
+                {translation("about-me-heading")}
+                <span>.</span>
+              </AboutMeHeading>
+              <AboutMeContent>
+                <AboutMeImage
+                  src="/images/pages/index/hello.svg"
+                  alt="about-me"
+                />
+                <AboutMeText>{translation("about-me-text")}</AboutMeText>
+              </AboutMeContent>
+            </AboutMeInner>
+          </Container>
+        </AboutMe>
       </StyledMainContent>
     </Layout>
   );
