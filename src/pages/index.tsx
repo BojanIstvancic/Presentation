@@ -133,9 +133,7 @@ const HomeImageContainer = styled.div`
 `;
 
 // ---- AboutMe ----
-const AboutMe = styled.section`
-  scroll-margin-top: 70px;
-`;
+const AboutMe = styled.section``;
 const AboutMeInner = styled.div`
   padding-bottom: 40px;
 `;
@@ -178,6 +176,30 @@ const AboutMeText = styled.p`
   @media (min-width: 800px) {
     font-size: 24px;
   }
+`;
+
+// ---- Social ----
+const Social = styled.section``;
+const SocialInner = styled.div`
+  padding-bottom: 40px;
+`;
+const SocialHeading = styled.h2`
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+  color: var(--blue);
+
+  @media (min-width: 800px) {
+    font-size: 48px;
+  }
+`;
+const SocialContent = styled.div`
+  display: flex;
+`;
+const SocialIcon = styled.img`
+  margin-right: 20px;
+  height: 50px;
 `;
 
 interface HomePageProps {}
@@ -247,6 +269,29 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
             </AboutMeInner>
           </Container>
         </AboutMe>
+        <Social>
+          <Container>
+            <SocialInner>
+              <SocialHeading>{translation("social-heading")}</SocialHeading>
+              <SocialContent>
+                <a
+                  href="https://www.linkedin.com/in/bojan-istvancic-195404127/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SocialIcon src="/images/icons/linkedIn.svg" alt="linkedIn" />
+                </a>
+                <a
+                  href="https://github.com/BojanIstvancic?tab=repositories"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <SocialIcon src="/images/icons/github.svg" alt="github" />
+                </a>
+              </SocialContent>
+            </SocialInner>
+          </Container>
+        </Social>
       </StyledMainContent>
     </Layout>
   );
