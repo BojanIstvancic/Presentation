@@ -8,6 +8,7 @@ import Image from "next/image";
 import HomeImage from "public/images/pages/index/home-image.png";
 import ReactTypingEffect from "react-typing-effect";
 import Accordion from "../components/Accordion";
+import { useRouter } from "next/router";
 
 const StyledMainContent = styled.main``;
 const Section = styled.section`
@@ -181,7 +182,9 @@ const AboutMeText = styled.p`
 
 // ---- Development ----
 const Development = styled(Section)``;
-const DevelopmentInner = styled.div``;
+const DevelopmentInner = styled.div`
+  padding-bottom: 40px;
+`;
 const DevelopmentHeading = styled(AboutMeHeading)``;
 const DevelopmentSubheading = styled.h3`
   font-size: 30px;
@@ -305,6 +308,62 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
   const translation = useTranslations("home");
   const position = translation("home-title-label-4");
 
+  const router = useRouter();
+  const locale = router.locale || "en";
+
+  const content = {
+    sr: {
+      items: [
+        {
+          title: "Frontend Developer",
+          heading: "Infostud grupa",
+          subheading: "Subotica, Srbija | April 2021 - radim",
+          description:
+            "Radim na razvoju najkorišćenije aplikacije za selekciju kandidata u Srbiji primenjujući najmodernije tehnologije - React i GraphQL. Razvoj i odžavanje vebsajta za HR Lab brend koristeći React i NextJS. Učestvovao u kompletnom rebrendiranju vebsajta u saradnji sa dizajnerima.",
+        },
+        {
+          title: "Project Manager/Frontend Developer",
+          heading: "Outfit.io",
+          subheading: "Remote | Maj 2019 - April 2021",
+          description:
+            "Na poziciji project manager-a sam obavljao dodatne dužnosti - prijem zadataka od klijenta, praćenje i procena količine vremena potrebne za izradu zadataka, delegiranje zadataka kolegama u zavisnosti od iskustva pojedinca i pomaganje kolegama u realizaciji zadataka.",
+        },
+        {
+          title: "Frontend Developer",
+          heading: "Outfit.io",
+          subheading: "Remote | Novembar 2018 - Maj 2019",
+          description:
+            "Radio sam na interesantnoj platformi za automatizaciju brendiranja. Dobijao informacija o zadacima, radio na razvoju i održavanju MustacheJS templejta - baneri, flajeri, brošure i animacije za onlajn oglašavanje.",
+        },
+      ],
+    },
+    en: {
+      items: [
+        {
+          title: "Frontend Developer",
+          heading: "Infostud group",
+          subheading: "Subotica, Serbia | April 2021 - present",
+          description:
+            "Working on the most widely-used ATS software in Serbia (HR Lab ATS) using modern tech React and GraphQL,s. Development and maintenance of the website for the HR Lab brand using React and NextJS. Participated in a complete rebranding of the website in collaboration with highly skilled designers.",
+        },
+        {
+          title: "Project Manager/Frontend Developer",
+          heading: "Outfit.io",
+          subheading: "Remote | May 2019 - April 2021",
+          description:
+            "As a project manager, I received additional obligations - gathering more tasks from the clients, tracking the required timing for each task, delegating tasks to colleagues depending on their experience, and helping colleagues with the realization of their own tasks.",
+        },
+        {
+          title: "Frontend Developer",
+          heading: "Outfit.io",
+          subheading: "Remote | November 2018 - May 2019",
+          description:
+            "Worked on an interesting branding automation platform. Daily gathered instructions about the tasks, built and maintained MustacheJS templates - banners, flyers, brochures, and animations for online advertising.",
+        },
+      ],
+    },
+  };
+
   return (
     <Layout>
       <StyledMainContent>
@@ -376,7 +435,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
               <DevelopmentSubheading>
                 {translation("development-subheading")}
               </DevelopmentSubheading>
-              <Accordion />
+              <Accordion items={content[locale].items} />
             </DevelopmentInner>
           </Container>
         </Development>
