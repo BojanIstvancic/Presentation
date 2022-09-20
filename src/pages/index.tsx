@@ -184,10 +184,10 @@ const AboutMeText = styled.p`
 const Contact = styled.section``;
 const ContactInner = styled.div``;
 const ContactHeading = styled(AboutMeHeading)``;
-const Social = styled.div`
+const GetInTouch = styled.div`
   padding-bottom: 40px;
 `;
-const SocialHeading = styled.h3`
+const GetInTouchHeading = styled.h2`
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -198,6 +198,69 @@ const SocialHeading = styled.h3`
     font-size: 38px;
   }
 `;
+const GetInTouchContent = styled.div`
+  @media (min-width: 600px) {
+    display: flex;
+  }
+`;
+
+const GetInTouchContentInner = styled.div`
+  margin-bottom: 24px;
+
+  @media (min-width: 600px) {
+    width: 50%;
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+
+  @media (min-width: 800px) {
+    margin-right: 80px;
+  }
+`;
+const GetInTouchImage = styled.img`
+  height: 200px;
+
+  @media (min-width: 800px) {
+    height: 300px;
+  }
+`;
+const GetInTouchText = styled.p`
+  margin-bottom: 24px;
+  font-size: 16px;
+  color: var(--black);
+
+  @media (min-width: 800px) {
+    font-size: 24px;
+  }
+`;
+const GetInTouchButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 155px;
+
+  font-size: 16px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--dark-gray);
+
+  @media (min-width: 800px) {
+    font-size: 24px;
+    width: 180px;
+  }
+`;
+const GetInTouchButtonImage = styled.img`
+  height: 17px;
+  margin-left: 5px;
+
+  @media (min-width: 800px) {
+    font-size: 24px;
+  }
+`;
+const Social = styled.div`
+  padding-bottom: 40px;
+`;
+const SocialHeading = styled(GetInTouchHeading)``;
 const SocialContent = styled.div`
   display: flex;
 `;
@@ -280,6 +343,29 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                 {translation("contact-heading")}
                 <span>.</span>
               </ContactHeading>
+              <GetInTouch>
+                <GetInTouchHeading>
+                  {translation("contact-get-in-touch-heading")}
+                </GetInTouchHeading>
+                <GetInTouchContent>
+                  <GetInTouchContentInner>
+                    <GetInTouchText>
+                      {translation("contact-get-in-touch-text")}
+                    </GetInTouchText>
+                    <GetInTouchButton href="mailto:bojan.istvancic@gmail.com">
+                      {translation("contact-get-in-touch-button")}
+                      <GetInTouchButtonImage
+                        src="/images/icons/email.svg"
+                        alt="e-mail"
+                      />
+                    </GetInTouchButton>
+                  </GetInTouchContentInner>
+                  <GetInTouchImage
+                    src="/images/pages/index/contact.svg"
+                    alt="contact"
+                  />
+                </GetInTouchContent>
+              </GetInTouch>
               <Social>
                 <SocialHeading>
                   {translation("contact-social-heading")}
