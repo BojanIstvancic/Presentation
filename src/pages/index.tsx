@@ -7,6 +7,7 @@ import Container from "../components/Container";
 import Image from "next/image";
 import HomeImage from "public/images/pages/index/home-image.png";
 import ReactTypingEffect from "react-typing-effect";
+import Accordion from "../components/Accordion";
 
 const StyledMainContent = styled.main``;
 const Section = styled.section`
@@ -375,6 +376,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
               <DevelopmentSubheading>
                 {translation("development-subheading")}
               </DevelopmentSubheading>
+              <Accordion />
             </DevelopmentInner>
           </Container>
         </Development>
