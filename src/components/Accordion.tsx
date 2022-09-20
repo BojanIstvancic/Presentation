@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-const AccordionWrapper = styled.div``;
+const AccordionWrapper = styled.div`
+  margin-bottom: 40px;
+`;
 const AccordionBar = styled.div`
   position: absolute;
   top: 5px;
@@ -12,6 +14,10 @@ const AccordionBar = styled.div`
 const AccordionItemStyled = styled.div`
   position: relative;
   padding-left: 40px;
+
+  @media (min-width: 800px) {
+    padding-left: 50px;
+  }
 
   &:not(:last-child) {
     padding-bottom: 40px;

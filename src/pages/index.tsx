@@ -197,6 +197,26 @@ const DevelopmentSubheading = styled.h3`
     font-size: 38px;
   }
 `;
+const Stack = styled.div``;
+const StackHeading = styled(DevelopmentSubheading)``;
+const StackIconContainer = styled.div`
+  display: flex;
+`;
+const StackIcon = styled.img`
+  height: 50px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+
+    @media (min-width: 800px) {
+      margin-right: 40px;
+    }
+  }
+
+  @media (min-width: 800px) {
+    height: 100px;
+  }
+`;
 
 // ---- Contact ----
 const Contact = styled(Section)``;
@@ -433,9 +453,24 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                 <span>.</span>
               </DevelopmentHeading>
               <DevelopmentSubheading>
-                {translation("development-subheading")}
+                {translation("development-experience-heading")}
               </DevelopmentSubheading>
               <Accordion items={content[locale].items} />
+              <Stack>
+                <StackHeading>
+                  {translation("development-stack-heading")}
+                </StackHeading>
+                <StackIconContainer>
+                  <StackIcon src="/images/icons/react.png" alt="react " />
+                  <StackIcon src="/images/icons/nextjs.png" alt="nextJS " />
+                  <StackIcon src="/images/icons/graphQL.png" alt="graphQL " />
+                  <StackIcon
+                    src="/images/icons/typescript.png"
+                    alt="typescript "
+                  />
+                  <StackIcon src="/images/icons/tailwind.png" alt="tailwind " />
+                </StackIconContainer>
+              </Stack>
             </DevelopmentInner>
           </Container>
         </Development>
