@@ -178,14 +178,11 @@ const AboutMeText = styled.p`
   }
 `;
 
-// ---- Contact ----
-const Contact = styled(Section)``;
-const ContactInner = styled.div``;
-const ContactHeading = styled(AboutMeHeading)``;
-const GetInTouch = styled.div`
-  padding-bottom: 40px;
-`;
-const GetInTouchHeading = styled.h2`
+// ---- Development ----
+const Development = styled(Section)``;
+const DevelopmentInner = styled.div``;
+const DevelopmentHeading = styled(AboutMeHeading)``;
+const DevelopmentSubheading = styled.h3`
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
@@ -196,6 +193,15 @@ const GetInTouchHeading = styled.h2`
     font-size: 38px;
   }
 `;
+
+// ---- Contact ----
+const Contact = styled(Section)``;
+const ContactInner = styled.div``;
+const ContactHeading = styled(AboutMeHeading)``;
+const GetInTouch = styled.div`
+  padding-bottom: 40px;
+`;
+const GetInTouchHeading = styled(DevelopmentSubheading)``;
 const GetInTouchContent = styled.div`
   @media (min-width: 600px) {
     display: flex;
@@ -278,13 +284,18 @@ const GetInTouchButtonImage = styled.img`
 const Social = styled.div`
   padding-bottom: 40px;
 `;
-const SocialHeading = styled(GetInTouchHeading)``;
+const SocialHeading = styled(DevelopmentSubheading)``;
 const SocialContent = styled.div`
   display: flex;
 `;
 const SocialIcon = styled.img`
   margin-right: 20px;
   height: 50px;
+
+  transition: all 200ms ease;
+  &:hover {
+    transform: rotate(17deg);
+  }
 `;
 
 interface HomePageProps {}
@@ -354,6 +365,19 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
             </AboutMeInner>
           </Container>
         </AboutMe>
+        <Development id="development">
+          <Container>
+            <DevelopmentInner>
+              <DevelopmentHeading>
+                {translation("development-heading")}
+                <span>.</span>
+              </DevelopmentHeading>
+              <DevelopmentSubheading>
+                {translation("development-subheading")}
+              </DevelopmentSubheading>
+            </DevelopmentInner>
+          </Container>
+        </Development>
         <Contact id="contact">
           <Container>
             <ContactInner>
