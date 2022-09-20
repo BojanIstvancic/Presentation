@@ -203,7 +203,7 @@ const StackIconContainer = styled.div`
   display: flex;
 `;
 const StackIcon = styled.img`
-  height: 50px;
+  height: 45px;
 
   &:not(:last-child) {
     margin-right: 15px;
