@@ -9,11 +9,11 @@ import HomeImage from "public/images/pages/index/home-image.png";
 import ReactTypingEffect from "react-typing-effect";
 
 const StyledMainContent = styled.main``;
-
-// ---- HOME ----
-const Home = styled.section`
-  scroll-margin-top: 70px;
+const Section = styled.section`
+  scroll-margin-top: 100px;
 `;
+// ---- HOME ----
+const Home = styled(Section)``;
 const HomeInner = styled.div`
   padding: 40px 0;
 
@@ -133,9 +133,7 @@ const HomeImageContainer = styled.div`
 `;
 
 // ---- AboutMe ----
-const AboutMe = styled.section`
-  scroll-margin-top: 100px;
-`;
+const AboutMe = styled(Section)``;
 const AboutMeInner = styled.div`
   padding-bottom: 40px;
 `;
@@ -181,7 +179,7 @@ const AboutMeText = styled.p`
 `;
 
 // ---- Contact ----
-const Contact = styled.section``;
+const Contact = styled(Section)``;
 const ContactInner = styled.div``;
 const ContactHeading = styled(AboutMeHeading)``;
 const GetInTouch = styled.div`
