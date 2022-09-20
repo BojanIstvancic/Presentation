@@ -29,6 +29,10 @@ const Container = styled.div`
 `;
 const Logo = styled.img`
   height: 32px;
+
+  @media (min-width: 800px) {
+    height: 40px;
+  }
 `;
 const Hamburger = styled.img`
   cursor: pointer;

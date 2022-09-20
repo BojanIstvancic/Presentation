@@ -42,6 +42,10 @@ const NavLink = styled.a`
   &:not(:last-child) {
     border-bottom: 1px solid var(--white);
   }
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+  }
 `;
 const NavCloseButton = styled.div`
   width: 100%;

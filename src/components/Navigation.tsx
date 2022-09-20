@@ -42,7 +42,7 @@ const StyledNavigation = styled.div`
 const NavigationLink = styled.a`
   position: relative;
   margin: 0 20px;
-  font-size: 16px;
+  font-size: 18px;
   color: var(--white);
   cursor: pointer;
 
