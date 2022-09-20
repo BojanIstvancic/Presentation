@@ -234,6 +234,7 @@ const GetInTouchText = styled.p`
   }
 `;
 const GetInTouchButton = styled.a`
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,6 +248,25 @@ const GetInTouchButton = styled.a`
   @media (min-width: 800px) {
     font-size: 24px;
     width: 180px;
+  }
+
+  &:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    border-radius: 10px;
+    background-color: var(--yellow);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  &:hover:before {
+    width: 100%;
   }
 `;
 const GetInTouchButtonImage = styled.img`
