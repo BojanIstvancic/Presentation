@@ -505,6 +505,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                   href="/index/CV.pdf"
                   download="Bojan-Istvancic-CV"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {translation("home-download")}
                 </HomeButton>
@@ -517,6 +518,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                   href="/index/CV.pdf"
                   download="Bojan-Istvancic-CV"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {translation("home-download")}
                 </HomeButton>
