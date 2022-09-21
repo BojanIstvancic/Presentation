@@ -280,7 +280,7 @@ const ProjectContent = styled.div`
 
   border-top: 3px solid var(--darker-blue);
 `;
-const ProjectHeading = styled.h4`
+const ProjectHeading = styled.h3`
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
@@ -608,6 +608,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                       <Image
                         layout="fill"
                         src="/images/pages/index/project-1-image.png"
+                        alt="project-image"
                       />
                       <ProjectLink
                         href="https://github.com/BojanIstvancic/Presentation"
