@@ -1,18 +1,19 @@
 import { GetStaticPropsContext } from "next";
-import React from "react";
-import Layout from "../components/Layout";
-import { useTranslations } from "use-intl";
-import styled from "styled-components";
-import Container from "../components/Container";
 import Image from "next/image";
-import HomeImage from "public/images/pages/index/home-image.png";
-import ReactTypingEffect from "react-typing-effect";
-import Accordion from "../components/Accordion";
 import { useRouter } from "next/router";
+import HomeImage from "public/images/pages/index/home-image.png";
+import React from "react";
+import ReactTypingEffect from "react-typing-effect";
+import styled from "styled-components";
+import { Swiper } from "swiper/react";
+import { useTranslations } from "use-intl";
+import Accordion from "../components/Accordion";
+import Container from "../components/Container";
+import Layout from "../components/Layout";
 
 const StyledMainContent = styled.main``;
 const Section = styled.section`
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 `;
 // ---- HOME ----
 const Home = styled(Section)``;
@@ -218,6 +219,101 @@ const StackIcon = styled.img`
   }
 `;
 
+// ---- Project ----
+const Projects = styled(Section)``;
+const ProjectsInner = styled.div`
+  padding-bottom: 40px;
+`;
+const ProjectsHeading = styled(AboutMeHeading)``;
+const SwiperWrapper = styled.div``;
+const Project = styled.div`
+  max-width: 400px;
+  border: 3px solid var(--light-blue);
+  border-radius: 7px;
+  overflow: hidden;
+`;
+const ProjectLink = styled.a`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 500ms ease;
+
+  p {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: var(--white);
+  }
+`;
+
+const ProjectImageContainer = styled.div`
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+
+  span {
+    transition: all 300ms ease-in;
+  }
+
+  &:hover,
+  &:focus {
+    span {
+      transform: scale(1.5);
+    }
+
+    ${ProjectLink} {
+      top: 0;
+    }
+  }
+`;
+const ProjectContent = styled.div`
+  padding: 10px;
+  background: var(--light-blue);
+
+  border-top: 3px solid var(--darker-blue);
+`;
+const ProjectHeading = styled.h4`
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--dark-gray);
+`;
+const ProjectTechnologies = styled.div`
+  display: flex;
+  margin-bottom: 20px;
+`;
+const Technology = styled.span`
+  font-size: 14px;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 3px 6px;
+  border-radius: 100px;
+  margin-right: 5px;
+
+  @media (min-width: 800px) {
+    padding: 3px 10px;
+  }
+
+  &.scss {
+    background-color: var(--pink);
+  }
+
+  &.typescript {
+    background-color: var(--darker-blue);
+  }
+`;
+const ProjectDescription = styled.p`
+  font-size: 16px;
+  color: var(--black);
+`;
 // ---- Contact ----
 const Contact = styled(Section)``;
 const ContactInner = styled.div``;
@@ -474,6 +570,76 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
             </DevelopmentInner>
           </Container>
         </Development>
+        <Projects id="projects">
+          <Container>
+            <ProjectsInner>
+              <ProjectsHeading>
+                {translation("projects-heading")}
+                <span>.</span>
+              </ProjectsHeading>
+              <SwiperWrapper>
+                <Swiper
+                  {...{
+                    // loop: true, // enable loop mode
+                    // autoplay: {
+                    //   delay: 2000, // delay between the slides
+                    //   disableOnInteraction: false, // do not cancel the loop when the user swipes it
+                    // },
+                    slidesPerView: 1, // slides per view
+                    // spaceBetween: 30, // space between the slides
+                    // breakpoints: {
+                    //   // when window width is >= 480px
+                    //   480: {
+                    //     slidesPerView: 1.5,
+                    //     spaceBetween: 30,
+                    //   },
+                    //   // when window width is >= 640px
+                    //   640: {
+                    //     slidesPerView: 2,
+                    //     spaceBetween: 40,
+                    //   },
+                    // },
+                  }}
+                >
+                  <Project>
+                    <ProjectImageContainer>
+                      <Image
+                        layout="fill"
+                        src="/images/pages/index/project-1-image.png"
+                      />
+                      <ProjectLink
+                        href="https://github.com/BojanIstvancic/Presentation"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <p>{translation("projects-project-1-link-text")}</p>
+                        <img
+                          src="/images/icons/github-white.svg"
+                          alt="github"
+                        />
+                      </ProjectLink>
+                    </ProjectImageContainer>
+                    <ProjectContent>
+                      <ProjectHeading>
+                        {translation("projects-project-1-heading")}
+                      </ProjectHeading>
+                      <ProjectTechnologies>
+                        <Technology className="nextJS">NextJs</Technology>
+                        <Technology className="typescript">
+                          TypeScript
+                        </Technology>
+                        <Technology className="scss">Scss</Technology>
+                      </ProjectTechnologies>
+                      <ProjectDescription>
+                        {translation("projects-project-1-description")}
+                      </ProjectDescription>
+                    </ProjectContent>
+                  </Project>
+                </Swiper>
+              </SwiperWrapper>
+            </ProjectsInner>
+          </Container>
+        </Projects>
         <Contact id="contact">
           <Container>
             <ContactInner>

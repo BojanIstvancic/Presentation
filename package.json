@@ -14,13 +14,15 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-typing-effect": "^2.0.5",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "swiper": "^8.4.2"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
     "@types/react-typing-effect": "^2.0.3",
+    "@types/styled-components": "^5.1.26",
     "eslint": "8.23.1",
     "eslint-config-next": "12.3.0",
     "react-typing-effect": "^2.0.5",

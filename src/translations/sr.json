@@ -23,6 +23,11 @@
     "development-experience-heading": "iskustvo",
     "development-stack-heading": "tehnologije",
 
+    "projects-heading": "projekti",
+    "projects-project-1-heading": "Portfolio",
+    "projects-project-1-description": "Kod za ovaj portfolio vebsajt se moze takodje videti na mom github profilu",
+    "projects-project-1-link-text": "Pogledaj projekat na github-u",
+
     "contact-heading": "kontakt",
     "contact-get-in-touch-heading": "stupite u kontakt",
     "contact-get-in-touch-text": "Uvek sam dostupan putem e-maila. Tu sam da odgovorim na bilo kakva pitanja ili zahteve.",

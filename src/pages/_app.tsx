@@ -1,9 +1,9 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { createGlobalStyle } from "styled-components";
-import Head from "next/head";
 import { NextIntlProvider } from "next-intl";
+import type { AppProps } from "next/app";
+import Head from "next/head";
 import { useRouter } from "next/router";
+import { createGlobalStyle } from "styled-components";
+import "../styles/globals.css";
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -14,9 +14,12 @@ const GlobalStyle = createGlobalStyle`
   --gray: #C4C4C4;
   --dark-gray: #424242;
 
+  --light-blue: #f0f8ff;
   --blue: #67BDFF;
   --dark-blue: #1c9cfd;
+  --darker-blue: #0079cf;
   --yellow: #ffe554;
+  --pink: #ce679a;
 }
 
 ::selection {
