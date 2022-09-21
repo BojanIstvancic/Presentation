@@ -502,7 +502,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                   </span>
                 </HomeTitle>
                 <HomeButton
-                  href="/index/CV.pdf"
+                  href="/index/cv.pdf"
                   download="Bojan-Istvancic-CV"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -515,7 +515,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                   <Image src={HomeImage} alt="home-image" layout="fill" />
                 </HomeImageContainer>
                 <HomeButton
-                  href="/index/CV.pdf"
+                  href="/index/cv.pdf"
                   download="Bojan-Istvancic-CV"
                   target="_blank"
                   rel="noopener noreferrer"
