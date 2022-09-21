@@ -551,7 +551,9 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
               <DevelopmentSubheading>
                 {translation("development-experience-heading")}
               </DevelopmentSubheading>
-              <Accordion items={content[locale].items} />
+              <Accordion
+                items={content[locale as keyof typeof content].items}
+              />
               <Stack>
                 <StackHeading>
                   {translation("development-stack-heading")}

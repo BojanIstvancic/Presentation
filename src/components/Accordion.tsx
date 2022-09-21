@@ -106,14 +106,12 @@ const AccordionItem: React.FC<AccordionItemProps> = ({
 };
 
 interface AccordionProps {
-  items: [
-    {
-      title: string;
-      heading: string;
-      subheading: string;
-      description: string;
-    }
-  ];
+  items: {
+    title: string;
+    heading: string;
+    subheading: string;
+    description: string;
+  }[];
 }
 
 const Accordion: React.FC<AccordionProps> = ({ items }) => {
