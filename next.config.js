@@ -1,6 +1,4 @@
-/** @type {import('next').NextConfig} */
-
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
 
@@ -9,6 +7,17 @@ const nextConfig = {
     defaultLocale: "en",
     localeDetection: false,
   },
-};
 
-module.exports = nextConfig;
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.pdf$/,
+      use: {
+        loader: "file-loader",
+        options: {
+          name: "[path][name].[ext]",
+        },
+      },
+    });
+    return config;
+  },
+};
