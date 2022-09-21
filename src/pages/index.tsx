@@ -681,7 +681,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     rel="noreferrer"
                   >
                     <SocialIcon
-                      src="/images/icons/linkedIn.svg"
+                      src="/images/icons/linkedin.svg"
                       alt="linkedIn"
                     />
                   </a>
