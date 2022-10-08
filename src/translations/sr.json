@@ -27,6 +27,9 @@
     "projects-project-1-heading": "Portfolio",
     "projects-project-1-description": "Kod za ovaj portfolio vebsajt se moze takodje videti na mom github profilu",
     "projects-project-1-link-text": "Pogledaj projekat na github-u",
+    "projects-project-2-heading": "CRUD App",
+    "projects-project-2-description": "Jedonstavna CRUD applikacija koja koristi API koji ne menja podatke.",
+    "projects-project-2-link-text": "Pogledaj projekat na github-u",
 
     "contact-heading": "kontakt",
     "contact-get-in-touch-heading": "stupite u kontakt",

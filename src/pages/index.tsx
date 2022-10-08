@@ -5,7 +5,7 @@ import HomeImage from "public/images/pages/index/home-image.png";
 import React from "react";
 import ReactTypingEffect from "react-typing-effect";
 import styled from "styled-components";
-import { Swiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { useTranslations } from "use-intl";
 import Accordion from "../components/Accordion";
 import Container from "../components/Container";
@@ -225,12 +225,30 @@ const ProjectsInner = styled.div`
   padding-bottom: 40px;
 `;
 const ProjectsHeading = styled(AboutMeHeading)``;
-const SwiperWrapper = styled.div``;
+const SwiperWrapper = styled.div`
+  @media (min-width: 900px) {
+    display: flex;
+  }
+`;
 const Project = styled.div`
   max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+
   border: 3px solid var(--light-blue);
+  background: var(--light-blue);
   border-radius: 7px;
   overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+
+    @media (min-width: 900px) {
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
 `;
 const ProjectLink = styled.a`
   position: absolute;
@@ -275,8 +293,12 @@ const ProjectImageContainer = styled.div`
   }
 `;
 const ProjectContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
   padding: 10px;
-  background: var(--light-blue);
+  flex: 1;
 
   border-top: 3px solid var(--darker-blue);
 `;
@@ -288,7 +310,8 @@ const ProjectHeading = styled.h3`
 `;
 const ProjectTechnologies = styled.div`
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 `;
 const Technology = styled.span`
   font-size: 14px;
@@ -297,6 +320,7 @@ const Technology = styled.span`
   padding: 3px 6px;
   border-radius: 100px;
   margin-right: 5px;
+  margin-bottom: 5px;
 
   @media (min-width: 800px) {
     padding: 3px 10px;
@@ -308,6 +332,16 @@ const Technology = styled.span`
 
   &.typescript {
     background-color: var(--darker-blue);
+  }
+
+  &.react {
+    background-color: #1cddff;
+  }
+  &.mui {
+    background-color: #0079f2;
+  }
+  &.styled-components {
+    background-color: #d17480;
   }
 `;
 const ProjectDescription = styled.p`
@@ -589,7 +623,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     //   delay: 2000, // delay between the slides
                     //   disableOnInteraction: false, // do not cancel the loop when the user swipes it
                     // },
-                    slidesPerView: 1, // slides per view
+                    slidesPerView: 2, // slides per view
                     // spaceBetween: 30, // space between the slides
                     // breakpoints: {
                     //   // when window width is >= 480px
@@ -604,43 +638,84 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     //   },
                     // },
                   }}
-                >
-                  <Project>
-                    <ProjectImageContainer>
+                ></Swiper>
+                <Project>
+                  <ProjectImageContainer>
+                    <Image
+                      layout="fill"
+                      src="/images/pages/index/project-1-image.png"
+                      alt="project-image-2"
+                    />
+                    <ProjectLink
+                      href="https://github.com/BojanIstvancic/Presentation"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <p style={{ marginBottom: "10px" }}>
+                        {translation("projects-project-1-link-text")}
+                      </p>
                       <Image
-                        layout="fill"
-                        src="/images/pages/index/project-1-image.png"
-                        alt="project-image"
+                        src="/images/icons/github-white.svg"
+                        alt="github"
+                        width="20"
+                        height="20"
                       />
-                      <ProjectLink
-                        href="https://github.com/BojanIstvancic/Presentation"
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <p>{translation("projects-project-1-link-text")}</p>
-                        <img
-                          src="/images/icons/github-white.svg"
-                          alt="github"
-                        />
-                      </ProjectLink>
-                    </ProjectImageContainer>
-                    <ProjectContent>
-                      <ProjectHeading>
-                        {translation("projects-project-1-heading")}
-                      </ProjectHeading>
-                      <ProjectTechnologies>
-                        <Technology className="nextJS">NextJs</Technology>
-                        <Technology className="typescript">
-                          TypeScript
-                        </Technology>
-                        <Technology className="scss">Scss</Technology>
-                      </ProjectTechnologies>
-                      <ProjectDescription>
-                        {translation("projects-project-1-description")}
-                      </ProjectDescription>
-                    </ProjectContent>
-                  </Project>
-                </Swiper>
+                    </ProjectLink>
+                  </ProjectImageContainer>
+                  <ProjectContent>
+                    <ProjectHeading>
+                      {translation("projects-project-1-heading")}
+                    </ProjectHeading>
+                    <ProjectTechnologies>
+                      <Technology className="nextJS">NextJs</Technology>
+                      <Technology className="typescript">TypeScript</Technology>
+                      <Technology className="scss">Scss</Technology>
+                    </ProjectTechnologies>
+                    <ProjectDescription>
+                      {translation("projects-project-1-description")}
+                    </ProjectDescription>
+                  </ProjectContent>
+                </Project>
+                <Project>
+                  <ProjectImageContainer>
+                    <Image
+                      layout="fill"
+                      src="/images/pages/index/project-2-image.png"
+                      alt="project-image-2"
+                    />
+                    <ProjectLink
+                      href="https://github.com/BojanIstvancic/simple-crud-app"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <p style={{ marginBottom: "10px" }}>
+                        {translation("projects-project-2-link-text")}
+                      </p>
+                      <Image
+                        src="/images/icons/github-white.svg"
+                        alt="github"
+                        width="20"
+                        height="20"
+                      />
+                    </ProjectLink>
+                  </ProjectImageContainer>
+                  <ProjectContent>
+                    <ProjectHeading>
+                      {translation("projects-project-2-heading")}
+                    </ProjectHeading>
+                    <ProjectTechnologies>
+                      <Technology className="react">React</Technology>
+                      <Technology className="typescript">TypeScript</Technology>
+                      <Technology className="styled-components">
+                        Styled Components
+                      </Technology>
+                      <Technology className="mui">MUI</Technology>
+                    </ProjectTechnologies>
+                    <ProjectDescription>
+                      {translation("projects-project-2-description")}
+                    </ProjectDescription>
+                  </ProjectContent>
+                </Project>
               </SwiperWrapper>
             </ProjectsInner>
           </Container>
