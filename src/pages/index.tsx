@@ -226,9 +226,10 @@ const ProjectsInner = styled.div`
 `;
 const ProjectsHeading = styled(AboutMeHeading)``;
 const SwiperWrapper = styled.div`
-  @media (min-width: 900px) {
-    display: flex;
-  }
+  margin-left: -20px;
+  margin-top: -20px;
+  display: flex;
+  flex-wrap: wrap;
 `;
 const Project = styled.div`
   max-width: 400px;
@@ -241,13 +242,10 @@ const Project = styled.div`
   border-radius: 7px;
   overflow: hidden;
 
+  margin: 20px;
+
   &:not(:last-child) {
     margin-bottom: 20px;
-
-    @media (min-width: 900px) {
-      margin-bottom: 0;
-      margin-right: 20px;
-    }
   }
 `;
 const ProjectLink = styled.a`
@@ -342,6 +340,18 @@ const Technology = styled.span`
   }
   &.styled-components {
     background-color: #d17480;
+  }
+  &.firebase {
+    background-color: #f9920d;
+  }
+  &.redux-toolkit {
+    background-color: #764abc;
+  }
+  &.cicd {
+    background-color: #8cb93d;
+  }
+  &.cpanel {
+    background-color: #ff6b2b;
   }
 `;
 const ProjectDescription = styled.p`
@@ -644,7 +654,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     <Image
                       layout="fill"
                       src="/images/pages/index/project-1-image.png"
-                      alt="project-image-2"
+                      alt="project-image-1"
                     />
                     <ProjectLink
                       href="https://github.com/BojanIstvancic/Presentation"
@@ -670,6 +680,8 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                       <Technology className="nextJS">NextJs</Technology>
                       <Technology className="typescript">TypeScript</Technology>
                       <Technology className="scss">Scss</Technology>
+                      <Technology className="cicd">CI/CD</Technology>
+                      <Technology className="cpanel">cPanel</Technology>
                     </ProjectTechnologies>
                     <ProjectDescription>
                       {translation("projects-project-1-description")}
@@ -713,6 +725,47 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     </ProjectTechnologies>
                     <ProjectDescription>
                       {translation("projects-project-2-description")}
+                    </ProjectDescription>
+                  </ProjectContent>
+                </Project>
+                <Project>
+                  <ProjectImageContainer>
+                    <Image
+                      layout="fill"
+                      src="/images/pages/index/project-3-image.png"
+                      alt="project-image-3"
+                    />
+                    <ProjectLink
+                      href="https://github.com/BojanIstvancic/time-tracker"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <p style={{ marginBottom: "10px" }}>
+                        {translation("projects-project-3-link-text")}
+                      </p>
+                      <Image
+                        src="/images/icons/github-white.svg"
+                        alt="github"
+                        width="20"
+                        height="20"
+                      />
+                    </ProjectLink>
+                  </ProjectImageContainer>
+                  <ProjectContent>
+                    <ProjectHeading>
+                      {translation("projects-project-3-heading")}
+                    </ProjectHeading>
+                    <ProjectTechnologies>
+                      <Technology className="react">React</Technology>
+                      <Technology className="redux-toolkit">
+                        Redux Toolkit
+                      </Technology>
+                      <Technology className="typescript">TypeScript</Technology>
+                      <Technology className="firebase">FireBase</Technology>
+                      <Technology className="mui">MUI</Technology>
+                    </ProjectTechnologies>
+                    <ProjectDescription>
+                      {translation("projects-project-3-description")}
                     </ProjectDescription>
                   </ProjectContent>
                 </Project>

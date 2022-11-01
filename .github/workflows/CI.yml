@@ -36,17 +36,3 @@ jobs:
         env:
           # tell to YML that we run CI
           CI: true
-
-  securityCheck:
-    name: Security Check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check for Security
-        run: |
-        echo "Runing Security Checks.. 1";
-        sleeps: 5s;
-        echo "Runing Security Checks.. 2";
-        sleeps: 5s;
-        echo "Runing Security Checks.. 3";
-        sleeps: 5s;
-
