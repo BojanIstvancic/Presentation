@@ -43,10 +43,10 @@ jobs:
     steps:
       - name: Check for Security
         run: |
-        echo "Runing Security Checks.. 1"
+        echo "Running Security Checks.. 1"
         sleep: 5s;
-        echo "Runing Security Checks.. 2"
+        echo "Running Security Checks.. 2"
         sleep: 5s;
-        echo "Runing Security Checks.. 3"
+        echo "Running Security Checks.. 3"
         sleep: 5s;
 
