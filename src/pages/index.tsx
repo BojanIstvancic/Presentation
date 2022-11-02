@@ -328,11 +328,9 @@ const Technology = styled.span`
   &.scss {
     background-color: var(--pink);
   }
-
   &.typescript {
     background-color: var(--darker-blue);
   }
-
   &.react {
     background-color: #0eb4d1;
   }
