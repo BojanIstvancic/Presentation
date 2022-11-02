@@ -9,9 +9,11 @@ jobs:
     name: Clone Repository
     runs-on: ubuntu-latest
     steps:
-      - name: Install Dependencies
+      - name: Clone Repository
         uses: actions/checkout@v2
+      - name: Instal Dependencies
         run: yarn install
+      - name: Create Dist
         run: yarn build
 
   lint_test:
@@ -20,7 +22,6 @@ jobs:
     needs: [clone_repository]
     steps:
       - name: Linting Test
-        uses: actions/checkout@v2
         run: yarn run lint
         env:
           CI: true
