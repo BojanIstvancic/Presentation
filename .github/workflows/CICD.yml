@@ -49,7 +49,7 @@ jobs:
   deploy_app:
     name: Deployment
     runs-on: ubuntu-latest
-      needs: [clone_repository, instal_dependencies, lint_test]
+    needs: [clone_repository, instal_dependencies, lint_test]
     steps:
       - name: Build Deploy Data
         run: |
