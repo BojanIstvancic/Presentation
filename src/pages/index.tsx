@@ -228,6 +228,7 @@ const ProjectsHeading = styled(AboutMeHeading)``;
 const SwiperWrapper = styled.div`
   margin-left: -20px;
   margin-top: -20px;
+  margin-right: -20px;
   display: flex;
   flex-wrap: wrap;
 `;
