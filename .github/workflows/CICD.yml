@@ -1,7 +1,8 @@
-name: TESTLINT
+name: CICD
 
 on:
   push:
+    branches: [main]
 
 jobs:
   lint_test:
@@ -24,3 +25,15 @@ jobs:
 
       - name: Linting Test
         run: yarn lint
+
+  deploy_app:
+    name: Deploy App
+    runs-on: ubuntu-latest
+    needs: [lint_test]
+    steps:
+      - name: Sync Files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
