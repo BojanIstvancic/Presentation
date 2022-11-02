@@ -9,8 +9,9 @@ jobs:
     name: Clone Repository
     runs-on: ubuntu-latest
     steps: 
-    -  uses: actions/checkout@v2
-    -  run: |
+    - name: Install Dependencies
+      uses: actions/checkout@v2
+      run: |
       echo "Running Installing Dependencies.."
       yarn install
 
@@ -19,11 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [clone_repository]
     steps:
-    -  uses: actions/checkout@v2
-    -  run: |
+    -  name: Linting Test
+       uses: actions/checkout@v2
+       run: |
         echo "Running Linting Tests..."
         yarn run lint
-    -  env:
+       env:
         CI: true
 
   deploy_app:
@@ -31,11 +33,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: [clone_repository, lint_testt]
     steps:
-    -  uses: actions/checkout@v2
-    -  run: |
+    -  name: Build Dist
+       uses: actions/checkout@v2
+       run: |
         echo "Build in Progress"
         yarn build
-    -  uses: SamKirkland/FTP-Deploy-Action@4.3.2
+    -  name: Build Dist
+       uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
