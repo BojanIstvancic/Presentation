@@ -31,7 +31,7 @@
     "projects-project-2-description": "Simple CRUD app that is using API which is actually not creating and updating items",
     "projects-project-2-link-text": "Visit project on github",
     "projects-project-3-heading": "Time-Tracker App",
-    "projects-project-3-description": "Application for tracking the time with authentication and Firebase database",
+    "projects-project-3-description": "Time tracking application with authentication and Firebase database",
     "projects-project-3-link-text": "Visit project on github",
 
     "contact-heading": "contact",
