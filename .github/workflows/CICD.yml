@@ -9,9 +9,9 @@ on:
 
 jobs:
   # add jobs - processes
-  cloneRepository:
+  clone_repository:
     # schedule linter
-    name: cloneRepository
+    name: Clone Repository
     # add a name to the job, can be whatever
     runs-on: ubuntu-latest
     # platform where to run our test (docker container, vm, ubuntu)
@@ -23,21 +23,21 @@ jobs:
         # copy main branch (checkout) - git predefined
 
 
-   instalDependencies:      
+   instal_dependencies:      
       - name: Install Dependencies
         # add a name to the this (2nd) step
         runs-on: ubuntu-latest
-        needs: [cloneRepository]
+        needs: [clone_repository]
         run: |
           echo "Running Installing Dependencies.."
           yarn install
         # add | for multiple commands
 
-    lintTest: 
+    lint_test: 
       - name: Run Linting
         # add a name to the this (3rd) step
         runs-on: ubuntu-latest
-        needs: [cloneRepository, instalDependencies]
+        needs: [clone_repository, instal_dependencies]
         run: |
           echo "Running Linting Tests..."
           yarn run lint
@@ -49,7 +49,7 @@ jobs:
     deployApp:
       name: Deployment
       runs-on: ubuntu-latest
-      needs: [cloneRepository, instalDependencies, lintTest]
+       needs: [clone_repository, instal_dependencies, lint_test]
       steps:
         - name: Build Deploy Data
           run: |
