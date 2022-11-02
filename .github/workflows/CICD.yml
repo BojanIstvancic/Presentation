@@ -1,0 +1,63 @@
+name: CICD
+
+on:
+  # add Events
+  push:
+    # trigger event when someone pushes
+    branches: [main]
+    # to the branch main
+
+jobs:
+  # add jobs - processes
+  cloneRepository:
+    # schedule linter
+    name: cloneRepository
+    # add a name to the job, can be whatever
+    runs-on: ubuntu-latest
+    # platform where to run our test (docker container, vm, ubuntu)
+    steps:
+      # define all steps that this job should do
+      - name: Clone Repository
+        # add a name to the this (1st) step
+        uses: actions/checkout@v2
+        # copy main branch (checkout) - git predefined
+
+
+   instalDependencies:      
+      - name: Install Dependencies
+        # add a name to the this (2nd) step
+        runs-on: ubuntu-latest
+        needs: [cloneRepository]
+        run: |
+          echo "Running Installing Dependencies.."
+          yarn install
+        # add | for multiple commands
+
+    lintTest: 
+      - name: Run Linting
+        # add a name to the this (3rd) step
+        runs-on: ubuntu-latest
+        needs: [cloneRepository, instalDependencies]
+        run: |
+          echo "Running Linting Tests..."
+          yarn run lint
+        # add Echo and run lint
+        env:
+          # tell to YML that we run CI
+          CI: true
+
+    deployApp:
+      name: Deployment
+      runs-on: ubuntu-latest
+      needs: [cloneRepository, instalDependencies, lintTest]
+      steps:
+        - name: Build Deploy Data
+          run: |
+            echo "Deploy in Progress"
+            yarn build
+        - name: Sync files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
