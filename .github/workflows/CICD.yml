@@ -12,6 +12,7 @@ jobs:
       - name: Install Dependencies
         uses: actions/checkout@v2
         run: yarn install
+        run: yarn build
 
   lint_test:
     name: Lint Test
@@ -27,11 +28,8 @@ jobs:
   deploy_app:
     name: Deploy App
     runs-on: ubuntu-latest
-    needs: [clone_repository, lint_testt]
+    needs: [clone_repository, lint_test]
     steps:
-      - name: Build Dist
-        uses: actions/checkout@v2
-        run: yarn build
       - name: Sync Files
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
