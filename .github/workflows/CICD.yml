@@ -22,8 +22,7 @@ jobs:
         uses: actions/checkout@v2
         # copy main branch (checkout) - git predefined
 
-
-  instal_dependencies:      
+  instal_dependencies:
     name: Install Dependencies
     # add a name to the this (2nd) step
     runs-on: ubuntu-latest
@@ -33,7 +32,7 @@ jobs:
       yarn install
     # add | for multiple commands
 
-  lint_test: 
+  lint_test:
     name: Run Linting
     # add a name to the this (3rd) step
     runs-on: ubuntu-latest
@@ -56,8 +55,8 @@ jobs:
           echo "Deploy in Progress"
           yarn build
       - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
