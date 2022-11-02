@@ -23,41 +23,41 @@ jobs:
         # copy main branch (checkout) - git predefined
 
 
-   instal_dependencies:      
-      - name: Install Dependencies
-        # add a name to the this (2nd) step
-        runs-on: ubuntu-latest
-        needs: [clone_repository]
-        run: |
-          echo "Running Installing Dependencies.."
-          yarn install
-        # add | for multiple commands
+  instal_dependencies:      
+    name: Install Dependencies
+    # add a name to the this (2nd) step
+    runs-on: ubuntu-latest
+    needs: [clone_repository]
+    run: |
+      echo "Running Installing Dependencies.."
+      yarn install
+    # add | for multiple commands
 
-    lint_test: 
-      - name: Run Linting
-        # add a name to the this (3rd) step
-        runs-on: ubuntu-latest
-        needs: [clone_repository, instal_dependencies]
-        run: |
-          echo "Running Linting Tests..."
-          yarn run lint
-        # add Echo and run lint
-        env:
-          # tell to YML that we run CI
-          CI: true
+  lint_test: 
+    name: Run Linting
+    # add a name to the this (3rd) step
+    runs-on: ubuntu-latest
+    needs: [clone_repository, instal_dependencies]
+    run: |
+      echo "Running Linting Tests..."
+      yarn run lint
+    # add Echo and run lint
+    env:
+      # tell to YML that we run CI
+      CI: true
 
-    deployApp:
-      name: Deployment
-      runs-on: ubuntu-latest
-       needs: [clone_repository, instal_dependencies, lint_test]
-      steps:
-        - name: Build Deploy Data
-          run: |
-            echo "Deploy in Progress"
-            yarn build
-        - name: Sync files
-        uses: SamKirkland/FTP-Deploy-Action@4.3.2
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+  deploy_app:
+    name: Deployment
+    runs-on: ubuntu-latest
+      needs: [clone_repository, instal_dependencies, lint_test]
+    steps:
+      - name: Build Deploy Data
+        run: |
+          echo "Deploy in Progress"
+          yarn build
+      - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
