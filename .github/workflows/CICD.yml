@@ -5,22 +5,16 @@ on:
     branches: [main]
 
 jobs:
-  run_server:
-    name: Run Server
-    runs-on: ubuntu-latest
-    steps:
-      - name: Use Node
-        uses: actions/setup-node@v2
-        with:
-        node-version: "14.x"
-
   clone_repository:
     name: Clone Repository
     runs-on: ubuntu-latest
-    needs: [run_server]
     steps:
       - name: Clone Repository
         uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14.x"
       - name: Instal Dependencies
         run: yarn install
       - name: Create Dist
@@ -29,7 +23,7 @@ jobs:
   lint_test:
     name: Lint Test
     runs-on: ubuntu-latest
-    needs: [run_server, clone_repository]
+    needs: [clone_repository]
     steps:
       - name: Linting Test
         run: yarn run lint
@@ -39,7 +33,7 @@ jobs:
   deploy_app:
     name: Deploy App
     runs-on: ubuntu-latest
-    needs: [run_server, clone_repository, lint_test]
+    needs: [clone_repository, lint_test]
     steps:
       - name: Sync Files
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
