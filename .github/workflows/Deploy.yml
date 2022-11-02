@@ -1,4 +1,4 @@
-name: CICD
+name: DEPLOY
 
 on:
   pull_request:
