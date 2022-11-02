@@ -334,7 +334,7 @@ const Technology = styled.span`
   }
 
   &.react {
-    background-color: #1cddff;
+    background-color: #0edafe;
   }
   &.mui {
     background-color: #0079f2;
