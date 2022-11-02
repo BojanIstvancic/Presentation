@@ -1,0 +1,40 @@
+name: CICD
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  clone_repository:
+    name: Clone Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Dependencies
+        uses: actions/checkout@v2
+        run: yarn install
+
+  lint_test:
+    name: Lint Test
+    runs-on: ubuntu-latest
+    needs: [clone_repository]
+    steps:
+      - name: Linting Test
+        uses: actions/checkout@v2
+        run: yarn run lint
+        env:
+          CI: true
+
+  deploy_app:
+    name: Deploy App
+    runs-on: ubuntu-latest
+    needs: [clone_repository, lint_testt]
+    steps:
+      - name: Build Dist
+        uses: actions/checkout@v2
+        run: yarn build
+      - name: Sync Files
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
