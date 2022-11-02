@@ -17,8 +17,10 @@ jobs:
           node-version: "14.x"
       - name: Instal Dependencies
         run: yarn install
+        working-directory: client
       - name: Create Dist
         run: yarn build
+        working-directory: client
 
   lint_test:
     name: Lint Test
@@ -26,7 +28,8 @@ jobs:
     needs: [clone_repository]
     steps:
       - name: Linting Test
-        run: yarn run lint
+        run: yarn lint
+        working-directory: client
         env:
           CI: true
 
