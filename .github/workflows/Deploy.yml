@@ -30,8 +30,8 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@4.3.2
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ftp.bojandev.com
+          username: portfolio@bojandev.com
+          password: }Th=}r7nJ30e
           protocol: ftps
           port: 21
