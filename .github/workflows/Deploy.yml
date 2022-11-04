@@ -10,7 +10,7 @@ on:
 
 jobs:
   deploy_app:
-    name: Lint Test
+    name: Deploy App
     runs-on: ubuntu-latest
     steps:
       - name: Clone Repository
