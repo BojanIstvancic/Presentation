@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy App
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lint_test:
+  deploy_app:
     name: Lint Test
     runs-on: ubuntu-latest
     steps:
@@ -29,14 +29,6 @@ jobs:
       - name: Create Dist
         run: yarn build
 
-      - name: Linting Test
-        run: yarn lint
-
-  deploy_app:
-    name: Deploy App
-    runs-on: ubuntu-latest
-    needs: [lint_test]
-    steps:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
