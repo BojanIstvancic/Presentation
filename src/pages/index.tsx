@@ -332,7 +332,7 @@ const Technology = styled.span`
     background-color: var(--darker-blue);
   }
   &.react {
-    background-color: #0cbcdc;
+    background-color: #0db6d4;
   }
   &.mui {
     background-color: #0079f2;
