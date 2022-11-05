@@ -1,6 +1,7 @@
 ---
 deployment:
   tasks:
-    - PATH={path_to_node}:$PATH
+    - export DEPLOYPATH=/home/bojandev/repositories/Presentation
+    - /bin/cp -R images $DEPLOYPATH
     - yarn i
     - yarn run build
