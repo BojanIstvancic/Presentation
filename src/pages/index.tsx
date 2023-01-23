@@ -209,7 +209,7 @@ const StackIcon = styled.img`
   &:not(:last-child) {
     margin-right: 15px;
 
-    @media (min-width: 800px) {
+    @media (min-width: 900px) {
       margin-right: 40px;
     }
   }
@@ -474,11 +474,18 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     sr: {
       items: [
         {
+          title: "React Developer",
+          heading: "VRIZE",
+          subheading: "Remote | October 2022 - zaposlen",
+          description:
+            "Radim na razvoju sign up aplikacije za velikog klijenta koji pruza usluge u oblasti zdravstva. Razvoj, održavanje i pisanje JEST testova su moja glavna zaduženja.",
+        },
+        {
           title: "Frontend Developer",
           heading: "Infostud grupa",
-          subheading: "Subotica, Srbija | April 2021 - radim",
+          subheading: "Subotica, Srbija | April 2021 - Oktobar 2022",
           description:
-            "Radim na razvoju najkorišćenije aplikacije za selekciju kandidata u Srbiji primenjujući najmodernije tehnologije - React i GraphQL. Razvoj i odžavanje vebsajta za HR Lab brend koristeći React i NextJS. Učestvovao u kompletnom rebrendiranju vebsajta u saradnji sa dizajnerima.",
+            "Radio sam na razvoju najkorišćenije aplikacije za selekciju kandidata u Srbiji primenjujući najmodernije tehnologije - React i GraphQL. Razvoj i odžavanje vebsajta za HR Lab brend koristeći React i NextJS. Učestvovao u kompletnom rebrendiranju vebsajta u saradnji sa dizajnerima.",
         },
         {
           title: "Project Manager/Frontend Developer",
@@ -499,11 +506,18 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
     en: {
       items: [
         {
+          title: "React Developer",
+          heading: "VRIZE",
+          subheading: "Remote | October 2022 - present",
+          description:
+            "Working on the sign up application for one of the biggest HealthCare Services. Development, maintenance and writing JEST tests for the application.",
+        },
+        {
           title: "Frontend Developer",
           heading: "Infostud group",
-          subheading: "Subotica, Serbia | April 2021 - present",
+          subheading: "Subotica, Serbia | April 2021 - October 2022",
           description:
-            "Working on the most widely-used ATS software in Serbia (HR Lab ATS) using modern tech React and GraphQL,s. Development and maintenance of the website for the HR Lab brand using React and NextJS. Participated in a complete rebranding of the website in collaboration with highly skilled designers.",
+            "Worked on the most widely-used ATS software in Serbia (HR Lab ATS) using modern tech React and GraphQL,s. Development and maintenance of the website for the HR Lab brand using React and NextJS. Participated in a complete rebranding of the website in collaboration with highly skilled designers.",
         },
         {
           title: "Project Manager/Frontend Developer",
@@ -609,8 +623,9 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                   <StackIcon src="/images/icons/graphQL.png" alt="graphQL " />
                   <StackIcon
                     src="/images/icons/typescript.png"
-                    alt="typescript "
+                    alt="typescript"
                   />
+                  <StackIcon src="/images/icons/jest.png" alt="jest " />
                   <StackIcon src="/images/icons/tailwind.png" alt="tailwind " />
                 </StackIconContainer>
               </Stack>
