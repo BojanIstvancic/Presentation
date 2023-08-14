@@ -471,9 +471,9 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
         {
           title: "React Developer",
           heading: "VRIZE",
-          subheading: "Remote | October 2022 - Jun - 2023",
+          subheading: "Remote | Octobar 2022 - Jun 2023",
           description:
-            "Radim na razvoju sign up aplikacije za velikog klijenta koji pruza usluge u oblasti zdravstva. Razvoj, održavanje i pisanje JEST testova su moja glavna zaduženja.",
+            "Radio sam na razvoju sign up aplikacije za velikog klijenta koji pruza usluge u oblasti zdravstva. Razvoj, održavanje i pisanje JEST testova su moja glavna zaduženja.",
         },
         {
           title: "Frontend Developer",
@@ -505,7 +505,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
           heading: "VRIZE",
           subheading: "Remote | October 2022 - June 2023",
           description:
-            "Working on the sign up application for one of the biggest HealthCare Services. Development, maintenance and writing JEST tests for the application.",
+            "Worked on the sign up application for one of the biggest HealthCare Services. Development, maintenance and writing JEST tests for the application.",
         },
         {
           title: "Frontend Developer",
