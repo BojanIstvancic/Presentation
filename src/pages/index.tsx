@@ -325,28 +325,23 @@ const Technology = styled.span`
     padding: 3px 10px;
   }
 
-  &.scss {
-    background-color: var(--pink);
-  }
   &.typescript {
     background-color: var(--darker-blue);
   }
   &.react {
     background-color: #0fc5e4;
   }
-  &.mui {
-    background-color: #0079f2;
-  }
-  &.styled-components {
-    background-color: #d17480;
-  }
-  &.firebase {
-    background-color: #f9920d;
-  }
-  &.redux-toolkit {
+  &.redux-toolkit,
+  &.mongodb,
+  &.formik,
+  &.mui,
+  &.styled-components,
+  &.scss,
+  &.mongoose {
     background-color: #764abc;
   }
-  &.cicd {
+  &.cicd,
+  &.nodejs {
     background-color: #8cb93d;
   }
   &.cpanel {
@@ -476,7 +471,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
         {
           title: "React Developer",
           heading: "VRIZE",
-          subheading: "Remote | October 2022 - zaposlen",
+          subheading: "Remote | October 2022 - Jun - 2023",
           description:
             "Radim na razvoju sign up aplikacije za velikog klijenta koji pruza usluge u oblasti zdravstva. Razvoj, održavanje i pisanje JEST testova su moja glavna zaduženja.",
         },
@@ -508,7 +503,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
         {
           title: "React Developer",
           heading: "VRIZE",
-          subheading: "Remote | October 2022 - present",
+          subheading: "Remote | October 2022 - June 2023",
           description:
             "Working on the sign up application for one of the biggest HealthCare Services. Development, maintenance and writing JEST tests for the application.",
         },
@@ -619,13 +614,12 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                 </StackHeading>
                 <StackIconContainer>
                   <StackIcon src="/images/icons/react.png" alt="react " />
-                  <StackIcon src="/images/icons/nextjs.png" alt="nextJS " />
-                  <StackIcon src="/images/icons/graphQL.png" alt="graphQL " />
+                  <StackIcon src="/images/icons/node.png" alt="node " />
                   <StackIcon
                     src="/images/icons/typescript.png"
                     alt="typescript"
                   />
-                  <StackIcon src="/images/icons/jest.png" alt="jest " />
+                  <StackIcon src="/images/icons/graphQL.png" alt="graphQL " />
                   <StackIcon src="/images/icons/tailwind.png" alt="tailwind " />
                 </StackIconContainer>
               </Stack>
@@ -692,6 +686,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     </ProjectHeading>
                     <ProjectTechnologies>
                       <Technology className="nextJS">NextJs</Technology>
+                      <Technology className="react">React</Technology>
                       <Technology className="typescript">TypeScript</Technology>
                       <Technology className="scss">Scss</Technology>
                       <Technology className="cicd">CI/CD</Technology>
@@ -710,7 +705,7 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                       alt="project-image-2"
                     />
                     <ProjectLink
-                      href="https://github.com/BojanIstvancic/simple-crud-app"
+                      href="https://github.com/BojanIstvancic/matko-vukovic"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -730,10 +725,15 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                       {translation("projects-project-2-heading")}
                     </ProjectHeading>
                     <ProjectTechnologies>
+                      <Technology className="nextJS">NextJs</Technology>
                       <Technology className="react">React</Technology>
                       <Technology className="typescript">TypeScript</Technology>
+                      <Technology className="redux-toolkit">
+                        Redux-Toolkit
+                      </Technology>
+                      <Technology className="formik">Formik</Technology>
                       <Technology className="styled-components">
-                        Styled Components
+                        Styled-components
                       </Technology>
                       <Technology className="mui">MUI</Technology>
                     </ProjectTechnologies>
@@ -747,10 +747,10 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                     <Image
                       layout="fill"
                       src="/images/pages/index/project-3-image.png"
-                      alt="project-image-3"
+                      alt="project-image-2"
                     />
                     <ProjectLink
-                      href="https://github.com/BojanIstvancic/time-tracker"
+                      href="https://github.com/BojanIstvancic/matko-vukovic-backend"
                       target="_blank"
                       rel="noreferrer"
                     >
@@ -770,13 +770,10 @@ const HomePage: React.FC<HomePageProps> = ({}) => {
                       {translation("projects-project-3-heading")}
                     </ProjectHeading>
                     <ProjectTechnologies>
-                      <Technology className="react">React</Technology>
-                      <Technology className="redux-toolkit">
-                        Redux Toolkit
-                      </Technology>
-                      <Technology className="typescript">TypeScript</Technology>
-                      <Technology className="firebase">FireBase</Technology>
-                      <Technology className="mui">MUI</Technology>
+                      <Technology className="express">Express</Technology>
+                      <Technology className="nodejs">NodeJs</Technology>
+                      <Technology className="mongodb">MongoDB</Technology>
+                      <Technology className="mongoose">Mongoose</Technology>
                     </ProjectTechnologies>
                     <ProjectDescription>
                       {translation("projects-project-3-description")}
